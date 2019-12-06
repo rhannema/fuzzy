@@ -83,7 +83,7 @@ def run_x_times(function, x, *args):
     for _ in range(x):
         result += [function(*args)]
         sumresult = sum(result)/x
-    return sumresult, np.mean(sumresult), np.std(sumresult)
+    return result, np.mean(result), np.std(result)
 
 
 # for every value of k up to 30:
