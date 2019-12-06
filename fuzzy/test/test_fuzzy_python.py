@@ -20,7 +20,9 @@ Created on Wed Dec  4 11:54:21 2019
 # results are different from the "healthy" environment
 
 import numpy as np
+import sys
 
+sys.setrecursionlimit(100000)
 
 def first_function(N):
     step_one = 1/N
