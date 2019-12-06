@@ -50,6 +50,20 @@ def u(K, dtype=float):
         uminus2 = u(K - 2)
         return 111 - (1130/uminus1) + 3000/(uminus1 * uminus2)
 
+def u2(K, dtype=float):
+    if K ==0:
+        return 2.0
+    elif K == 1:
+        return -4.0
+    else: 
+        uminus2 = 2.0
+        uminus1 = -4.0
+    for k in range(2, K+1):
+        val = 111 - (1130/uminus1) + 3000/(uminus1 * uminus2)
+        uminus2 = uminus1
+        uminus1 = val
+    return val
+
 
 # X(30)
 # X(30, dtype=np.float32)
@@ -78,7 +92,7 @@ def run_x_times(function, x, *args):
 # print k, mean, and std to screen
 for t in [np.float32, np.float64]:
     for _ in range(30):
-        print(run_x_times(u, 100, _, t))
+        print(run_x_times(u2, 100, _, t))
 
 # print(run_x_times(third_function, 100000, 100000))
 # print(X(30))
