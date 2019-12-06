@@ -52,14 +52,14 @@ def u(K, dtype=float):
 
 def u2(K, dtype=float):
     if K ==0:
-        return 2.0
+        return dtype(2.0)
     elif K == 1:
-        return -4.0
+        return dtype(-4.0)
     else: 
-        uminus2 = 2.0
-        uminus1 = -4.0
+        uminus2 = dtype(2.0)
+        uminus1 = dtype(-4.0)
     for k in range(2, K+1):
-        val = 111 - (1130/uminus1) + 3000/(uminus1 * uminus2)
+        val = dtype(111) - (dtype(1130)/uminus1) + dtype(3000)/(uminus1 * uminus2)
         uminus2 = uminus1
         uminus1 = val
     return val
