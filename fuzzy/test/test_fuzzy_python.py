@@ -78,7 +78,7 @@ def run_x_times(function, x, *args):
 # print k, mean, and std to screen
 for t in [np.float32, np.float64]:
     for _ in range(30):
-        print(run_x_times(u, 10000, _, t))
+        print(run_x_times(u, 100, _, t))
 
 # print(run_x_times(third_function, 100000, 100000))
 # print(X(30))
